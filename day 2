@@ -1,0 +1,50 @@
+//Ques 1 --> submission link --> (https://codeforces.com/group/MWSDmqGsZm/contest/219158/my)
+
+import java.util.*;
+ 
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int l1 = sc.nextInt();
+        int r1 = sc.nextInt();
+        int l2 = sc.nextInt();
+        int r2 = sc.nextInt();
+        if(l1 >= l2 && l1 <= r2){
+            if(r1 >= l2 && r1 <= r2) System.out.println(l1+" "+r1);
+            else if(r2 >= l1 && r2 <= r1) System.out.println(l1+" "+r2);
+        }
+        else if(l2 >= l1 && l2 <= r1){
+            if(r2 >= l1 && r2 <= r1) System.out.println(l2+" "+r2);
+            else if(r1 >= l2 && r1 <= r2) System.out.println(l2+" "+r1);
+        }
+        else{
+            System.out.println(-1);
+        }
+    }
+}
+
+//QUES 2 --> submission link --> (https://codeforces.com/group/MWSDmqGsZm/contest/219432/my)
+
+import java.util.*;
+ 
+public class git{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        int even = 0;
+        int odd = 0;
+        int neg = 0;
+        int pos = 0;
+        for(int i = 1; i <= n; i++)
+        {
+            int m = sc.nextInt();
+            if (m%2 == 0) even++;
+            else odd++;
+            if(m > 0) pos++;
+            else if(m < 0) neg++; 
+        }
+        System.out.println("Even: "+even+"\nOdd: "+odd+"\nPositive: "+pos+"\nNegative: "+neg);
+    }
+}
