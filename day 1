@@ -1,0 +1,54 @@
+//submission link --> (https://codeforces.com/group/MWSDmqGsZm/contest/219158/my)
+
+//QUES 1 -->  Coordinates of a Point
+
+import java.util.Scanner;
+ 
+public class git{
+    public static String quadrant(double x, double y)
+    {
+        if(x == 0){
+            if(y == 0) return "Origem";
+            else return "Eixo Y";
+        } 
+        else if(x > 0) {
+            if(y == 0) return "Eixo X";
+            else if (y < 0) return "Q4";
+            else return "Q1";
+        } 
+        else{
+            if(y == 0) return "Eixo X";
+            if (y < 0) return "Q3";          
+            else return "Q2";
+        }
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+ 
+        System.out.println(quadrant(a,b));
+    }
+}
+
+//QUES 2 --> capital or small digits
+
+import java.util.*;
+ 
+public class git{
+    public static void character(char ch)
+    {
+        if (ch >= '0' && ch <= '9') System.out.println("IS DIGIT");
+        else System.out.println("ALPHA");
+        if(ch >= 'a' && ch <= 'z') System.out.println("IS SMALL");
+        else if(ch >= 'A' && ch <= 'Z') System.out.println("IS CAPITAL");
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+        character(ch);
+    }
+}
+
