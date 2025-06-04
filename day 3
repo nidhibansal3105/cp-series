@@ -1,0 +1,74 @@
+//Ques 1 --> submission link --> ()
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] arr = new int[n][m];
+        for (int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < m; j++)
+            {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        int key = sc.nextInt();
+        int flag = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < m; j++)
+            {
+                if(key == arr[i][j]){
+                    System.out.println("will not take number");
+                    flag = 1;
+                    break;
+                } 
+                if(flag) break;
+            }
+        }
+        if(flag == 0) System.out.println("will take number");
+    }
+}
+
+//Ques 2 submission link ---> ()
+
+import java.util.*;
+
+public class git {
+    public static void printMax(int[] a)
+    {
+        int i = 0;
+        int j = 0;
+        while(i < a.length){
+            j = i;
+            int max = Integer.MIN_VALUE;
+            while(j < a.length)
+            {
+                max = Math.max(max, a[j++]);
+                System.out.print(max+" ");
+            }
+            i++;
+        }
+    }
+
+    public static void main(String[] arg)
+    {
+        Scanner sc = new Scanner(System.in);
+        int test_case = sc.nextInt();
+        for (int j = 1; j <= test_case; j++)
+        {
+            int n = sc.nextInt();
+            int[] arr = new int[n];
+            for(int i = 0; i < n; i++)
+            {
+                arr[i] = sc.nextInt();
+            }
+            printMax(arr);
+            System.out.println();
+        }
+    }
+}
