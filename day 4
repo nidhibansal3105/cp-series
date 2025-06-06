@@ -1,0 +1,67 @@
+//Ques 1  --> submission link --> (https://codeforces.com/group/MWSDmqGsZm/contest/219774/my)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int q = sc.nextInt();
+        long[] arr = new long[n+1];
+        long[] a = new long[n+1];
+        for(int i = 1; i < n+1; i++){
+            arr[i] = sc.nextInt();
+            a[i] = arr[i]+a[i-1];
+        } 
+        for(int i = 0; i < q; i++)
+        {
+            int l = sc.nextInt();
+            int r = sc.nextInt();
+            long sum=0;
+            if(l>1) sum = a[r] - a[l-1];
+            else sum = a[r];
+     
+            System.out.println(sum);
+        }
+    }
+}
+
+//Ques 2  --> submission link --> (https://codeforces.com/group/MWSDmqGsZm/contest/219774/my)
+
+import java.util.*;
+
+public class git{
+    public static int sum(int[] arr, int l, int r)
+    {
+        int sum = 0;
+        for(int i = l-1; i < r; i++){
+            sum += arr[i];
+        }
+        return sum;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] a = new int[n];
+        int[] b = new int[m];
+        for(int i = 0; i < n; i++){
+            a[i] = sc.nextInt();
+        }
+        for(int i = 0; i < m; i++){
+            b[i] = sc.nextInt();
+        }
+        int i = 0, j = 0;
+        while(i < b.length && j < a.length)
+        {
+            if(b[i] == a[j]) i++;
+            j++;
+        }
+        if(i < b.length && j == a.length) System.out.println("NO");
+        else{
+            System.out.println("YES");
+        }
+    }
+}
