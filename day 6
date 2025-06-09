@@ -1,0 +1,48 @@
+//Ques 1 --> submission link --> (https://codeforces.com/group/MWSDmqGsZm/contest/219856/my)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int idx = str.indexOf("me=");
+        int i = idx+3;
+        String username = "";
+        String pwd = "";
+        String profile = "";
+        String role = "";
+        String key = "";
+        while(str.charAt(i) != '&'){
+            username = username+str.charAt(i);
+            i++;
+        }
+        int idx1 = str.indexOf("d=");
+        int j = idx1+2;
+        while(str.charAt(j) != '&'){
+            pwd = pwd+str.charAt(j);
+            j++;
+        }
+        int idx2 = str.indexOf("le=");
+        int k = idx2+3;
+        while(str.charAt(k) != '&'){
+            profile = profile+str.charAt(k);
+            k++;
+        }
+        int idx3 = str.indexOf("ole=");
+        int l = idx3+4;
+        while(str.charAt(l) != '&'){
+            role = role+str.charAt(l);
+            l++;
+        }
+        int idx4 = str.indexOf("y=");
+        int m = idx4+2;
+        while(m < str.length()){
+            key = key+str.charAt(m);
+            m++;
+        }
+        System.out.print("username: "+username+"\npwd: "+pwd+"\nprofile: "+profile+"\nrole: "+role+"\nkey: "+key);
+    }
+}
+
