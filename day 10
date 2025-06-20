@@ -1,0 +1,99 @@
+//Ques 1 : (link--> https://codeforces.com/group/c3FDl9EUi9/contest/262795/my)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        HashMap<Long,Integer> map = new HashMap<>();
+        List<Integer> ans = new ArrayList<>();
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        long[] arr = new long[n];
+        for(int i = 0; i < n; i++){
+            arr[i] = sc.nextLong();
+        }
+        for(int i = 0; i < n; i++){
+            if(!map.containsKey(arr[i])){
+                map.put(arr[i], i);
+                ans.add(i+1);
+                if(ans.size() == k) break;
+            }
+        }
+        if(ans.size() == k) {
+            System.out.println("YES");
+            for(int num : ans){
+                System.out.print(num+" ");
+            }
+        }
+        else{
+            System.out.println("NO");
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/group/c3FDl9EUi9/contest/262795/my)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Student[] stu = new Student[n];
+        for(int i = 0; i < n; i++){
+            sc.nextLine();
+            String name = sc.next();
+            int arab = sc.nextInt();
+            int maths = sc.nextInt();
+            int science = sc.nextInt();
+            int english = sc.nextInt();
+            stu[i] = new Student(name, arab,maths,science, english);
+        }
+        Student.sortStudents(stu);
+        for(int i = 0; i < n; i++){
+            System.out.print(stu[i].name+" ");
+            System.out.print(stu[i].total+" ");
+            System.out.print(stu[i].arab+" "); 
+            System.out.print(stu[i].maths+" "); 
+            System.out.print(stu[i].science+" "); 
+            System.out.println(stu[i].english); 
+        }
+    }
+}
+class Student{
+    String name;
+    int arab;
+    int maths;
+    int science;
+    int english;
+    int total;
+    public Student(String n, int a, int m, int s, int e){
+        this.name = n;
+        this.arab = a;
+        this.maths = m;
+        this.science = s;
+        this.english = e;
+        this.total = a+m+s+e;
+    }
+
+    public static void sortStudents(Student[] stu){
+        Student temp;
+        for(int i = 0; i < stu.length-1; i++){
+            for(int j = 0; j < stu.length-1-i; j++){
+                if(stu[j].total < stu[j+1].total){
+                    temp = stu[j];
+                    stu[j] = stu[j+1];
+                    stu[j+1] = temp;
+                }
+                else if(stu[j].total == stu[j+1].total){
+                    if((stu[j].name).compareTo(stu[j+1].name) > 0){
+                        temp = stu[j];
+                        stu[j] = stu[j+1];
+                        stu[j+1] = temp;
+                    }
+                }
+            }
+        }
+    }
+}
