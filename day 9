@@ -1,0 +1,142 @@
+//Ques 1 : (link--> https://codeforces.com/group/c3FDl9EUi9/contest/262795/my)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();        
+        int q = sc.nextInt();   
+        long[][] arr = new long[n][m];
+        long[][] a = new long[n][m];
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < m; j++)
+            {
+                arr[i][j] = sc.nextLong();
+                if(j == 0)
+                {
+                    a[i][j] = arr[i][j];
+                }
+                else
+                {
+                    a[i][j] = a[i][j-1] + arr[i][j];
+                }
+            }
+        }
+        for(int i = 0; i < m; i++){
+            for(int j = 1; j < n; j++){
+                a[j][i] = a[j-1][i]+a[j][i];
+            }
+        }
+        for(int i = 0; i < q; i++){
+            int x1 = sc.nextInt();
+            int y1 = sc.nextInt();
+            int x2 = sc.nextInt();
+            int y2 = sc.nextInt();
+            x1--;
+            x2--;
+            y2--;
+            y1--;
+            long sum = a[x2][y2];
+            if(x1 > 0)
+                sum -= a[x1-1][y2];
+            if(y1 > 0)
+                sum -= a[x2][y1-1];
+            if(x1 > 0 && y1 > 0)
+                sum += a[x1-1][y1-1];
+            
+            System.out.println(sum);
+        }    
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/group/c3FDl9EUi9/contest/262795/my)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();        
+        int q = sc.nextInt();   
+        List<Long> list = new ArrayList<>();
+        for(int i = 0; i < n; i++){
+            long number = sc.nextLong();
+            list.add(number);
+        }
+        sc.nextLine();
+        for(int i = 1; i <= q; i++){
+            String ans = sc.nextLine();
+            if(ans.contains("pop_back")){
+                list.remove(list.size()-1);
+            }
+            else if(ans.contains("front")){
+                System.out.println(list.get(0));
+            }
+            else if(ans.contains("push_back")){
+                long number = Integer.valueOf(ans.substring(10,ans.length()));
+                list.add(number);
+            }
+            else if(ans.contains("back")){
+                System.out.println(list.get(list.size()-1));
+            }
+            else if(ans.contains("print")){
+                int pos = Integer.parseInt(ans.substring(6,ans.length()));
+                pos--;
+                if(pos < list.size())
+                    System.out.println(list.get(pos));
+            }
+            else if(ans.contains("reverse")){
+                int num1 = 0;
+                int num2 = 0;
+                for(int j = 9; j < ans.length(); j++){
+                    if(ans.charAt(j) == ' '){
+                        num1 = Integer.valueOf(ans.substring(8,j));
+                        num2 = Integer.valueOf(ans.substring(j+1, ans.length()));
+                        break;
+                    }
+                }
+                long temp;
+                num1--;
+                num2--;
+                if(num1 >= 0 && num2 < list.size() && num1 <= num2){
+                    for(int k = 0; k <= (num2-num1)/2; k++){
+                        temp = list.get(num1+k); 
+                        list.set(num1+k, list.get(num2-k));
+                        list.set(num2-k, temp);
+                    }
+                }
+            }
+            else{
+                int num1 = 0;
+                int num2 = 0;
+                for(int j = 5; j < ans.length(); j++){
+                    if(ans.charAt(j) == ' '){
+                        num1 = Integer.valueOf(ans.substring(5,j));
+                        num2 = Integer.valueOf(ans.substring(j+1, ans.length()));
+                        break;
+                    }
+                }
+                num1--;
+                num2--;
+                if(num1 >= 0 && num2 < list.size() && num1 <= num2){
+                    long[] a = new long[num2-num1+1];
+                    int k = 0;
+                    for(int j = num1; j <= num2; j++){
+                        a[k] = list.get(j);
+                        k++;
+                    }
+                    Arrays.sort(a);
+                    k = 0;
+                    for(int j = num1; j <= num2; j++){
+                        list.set(j, a[k]);
+                        k++;
+                    }
+                }
+            }
+        }
+    }
+}
+   
