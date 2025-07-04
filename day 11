@@ -1,0 +1,52 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static boolean isValid(long[] arr){
+        for(int i = 0; i < arr.length-1; i++){
+            if(arr[i] > arr[i+1]){
+                return false;
+            }
+        }   
+        return true;
+    } 
+    
+    public static void main(String []arg){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int n = sc.nextInt();
+            long k = sc.nextLong();
+            long[] arr = new long[n];
+            for(int j = 0; j < n; j++){
+                arr[j] = sc.nextLong();
+            }
+            
+            if(k > 1) {
+                System.out.println("YES");
+            }
+            else if(isValid(arr)){
+                System.out.println("YES");
+            }
+            else{
+                System.out.println("NO");
+            }
+        }
+    }
+}
+
+//Ques 2: (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String []arg){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            long n = sc.nextLong();
+            System.out.println(-(n-1)+" "+n);
+        }
+    }
+}
