@@ -1,0 +1,43 @@
+//Ques 1 : (link-->https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+ 
+public class git{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i = 0; i < n; i++){
+            long a = sc.nextLong();
+            long b = sc.nextLong();
+            long c = sc.nextLong();
+            long d = sc.nextLong();
+            System.out.println(b+" "+c+" "+c);
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class gti{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int n = sc.nextInt();
+            long[] arr = new long[n];
+            for(int j = 0; j < n; j++){
+                arr[j] = sc.nextLong();
+            }
+            int countEven = 0;
+            int countOdd = 0;
+            for(long k : arr){
+                if(k%2 == 1) countOdd++;
+                else countEven++;
+            }
+            if(countOdd%2 == 1 || (countEven > 0 && countOdd > 0 && countOdd%2 == 0)) System.out.println("Yes");
+            else System.out.println("No");
+        }
+    }
+}
