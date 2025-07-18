@@ -1,0 +1,41 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            long x = sc.nextLong();
+            long y = sc.nextLong();
+            long n = sc.nextLong();
+            if(n%x == y) System.out.println(n);
+            else if(n%x < y) System.out.println(n-(x-y)-(n%x));
+            else System.out.println(n-(n%x)+y);
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int n = sc.nextInt();
+            if((n-2*b+a+c)%3 == 0 && (n-2*c+a+b)%3 == 0 && (n-2*a+b+c)%3 == 0 && Math.abs((n-2*b+a+c)/3) + Math.abs((n-2*c+a+b)/3) + Math.abs((n-2*a+b+c)/3) == n){
+                System.out.println("Yes");
+            }
+            else{
+                System.out.println("No");
+            }
+        }
+    }
+}
