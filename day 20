@@ -1,0 +1,36 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            System.out.println((n*m+1)/2);
+        }
+    }
+}
+
+//Ques 2 :(link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int m = sc.nextInt();
+            int n = sc.nextInt();
+            int max = n>m ? n:m;
+            int min = n<m ? n:m;
+            int area;
+            if(2*min >= max) area = (int)Math.pow(2*min,2);
+            else area = (int)Math.pow(2*max,2);
+            System.out.println(area);
+        }
+    }
+}
