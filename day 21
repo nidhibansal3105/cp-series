@@ -1,0 +1,45 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            if(n == 1) System.out.println(0);
+            else if (n == 2) System.out.println(m);
+            else System.out.println(2*m);
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int j = 0; j < testCase; j++){
+            int n = sc.nextInt();
+            if((n/2)%2 == 1) System.out.print("NO");
+            else{
+                System.out.println("YES");
+                for(int i = 0; i < n; i++){
+                    if(i < n/2) System.out.print((i+1)*2+" ");
+                    else if(i >= n/2 && i < (3*n)/4) {
+                        System.out.print(((i-(n/2)+1)*2)-1+" ");
+                    }
+                    else {
+                        System.out.print(((i-(n/2)+1)*2)+1+" ");
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+}
