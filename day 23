@@ -1,0 +1,34 @@
+//Ques 1 :(link --> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int ans = 0;
+            int n = sc.nextInt();
+            ans = n/2 - 1;
+            if(n%2 == 0) System.out.println(ans);
+            else System.out.println(ans+1);
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int ans = Math.abs(a-b)%10 == 0 ? Math.abs(a-b)/10 : Math.abs(a-b)/10 + 1;
+            System.out.println(ans);
+        }
+    }
+}
