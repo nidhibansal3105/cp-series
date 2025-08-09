@@ -1,0 +1,36 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int k = sc.nextInt();
+        long[] a = new long[n];
+        for(int i = 0; i < n; i++){
+            a[i] = sc.nextLong();
+        }
+        long temp;
+        for(int l = 1; l < 3; l++){
+            for(int j = 0; j < n-l; j++){
+                if(a[j] > a[j+1]){
+                    temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+        long ans = 0;
+        if(a[n-1] == a[n-2]) System.out.println(a[n-1] * m);
+        else{
+            ans = (long)((m/(k+1))*k+(m%(k+1)))*a[n-1];
+            ans += (long)(m/(k+1))*a[n-2];
+            System.out.println(ans);
+        }
+    }
+}
+
+//Ques 2 : (link--> )
+
