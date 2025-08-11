@@ -1,0 +1,33 @@
+//Ques 1 : (link--> )
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        long x = sc.nextLong();
+        long y = sc.nextLong();
+        long z = sc.nextLong();
+        System.out.print((x+y)/z+" ");
+        long max = Math.max((x%z),(y%z));
+        long min = Math.min((x%z),(y%z));
+        long ans = (z-max) <= min ? (z-max): 0;
+        System.out.println(ans);
+    }
+}
+
+//Ques 2 : (link--> )
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            long n = sc.nextLong();
+            if(n > 14 && n%14 <= 6 && n%14 >= 1) System.out.println("YES");
+            else System.out.println("NO");
+        }
+    }
+}
