@@ -1,0 +1,38 @@
+//Ques 1: (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            long c = sc.nextLong();
+            long sum = sc.nextLong();
+            if(sum <= c) System.out.println(sum);
+            else{
+                long min = sum/c;
+                long exess = sum%c;
+                long ans = (long)(exess*Math.pow((min+1), 2) + (c-exess)*Math.pow(min, 2));
+                System.out.println(ans);
+            }
+        }
+    }
+}
+
+//Ques 2 : (link--> )
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int i = 0; i < testCase; i++){
+            long k = sc.nextLong();
+            long n = sc.nextLong();
+            long ans = n + (k-1)*9;
+            System.out.println(ans);
+        }
+    }
+}
