@@ -1,0 +1,83 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        for(int j = 0; j < testCase; j++){
+            long area = 0;
+            long w = sc.nextLong();
+            long h = sc.nextLong();
+            long n1 = sc.nextLong();
+            long first = 0;
+            long last = 0;
+            for(int i = 0; i < n1; i++){
+                if(i == 0) first = sc.nextLong();
+                else last = sc.nextLong();
+            }
+            area = Math.max(area, (last-first)*h);
+            last = 0;
+            first = 0;
+            long n2 = sc.nextLong();
+            for(int i = 0; i < n2; i++){
+                if(i == 0) first = sc.nextLong();
+                else last = sc.nextLong();
+            }
+            area = Math.max(area, (last-first)*h);
+            last = 0;
+            first = 0;
+            long n3 = sc.nextLong();
+            for(int i = 0; i < n3; i++){
+                if(i == 0) first = sc.nextLong();
+                else last = sc.nextLong();
+            }
+            area = Math.max(area, (last-first)*w);
+            last = 0;
+            first = 0;
+            long n4 = sc.nextLong();
+            for(int i = 0; i < n4; i++){
+                if(i == 0) first = sc.nextLong();
+                else last = sc.nextLong();
+            }
+            area = Math.max(area, (last-first)*w);
+            System.out.println(area);
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static boolean isRed(String str){
+        int noOfZero = 0;
+        int noOfEven = 0;
+        long x = 0;
+        long sum = 0;
+        for(char ch : str.toCharArray()){
+            sum += Integer.valueOf(ch);
+            if(ch == '0') noOfZero++;
+            else if(Integer.valueOf(ch)%2 == 0) noOfEven++;
+        }
+        if(noOfZero > 0 && noOfEven > 0 && sum%3 == 0) return true;
+        else if (noOfZero > 1 && noOfEven == 0 && sum%3 == 0) return true;
+        return false;
+    }
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        sc.nextLine();
+        for(int i = 0; i < testCase; i++){
+            String n = sc.nextLine();
+            if(isRed(n)){
+                System.out.println("red");
+            }
+            else{
+                System.out.println("cyan");
+            }
+        }
+    }
+}
