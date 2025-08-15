@@ -1,0 +1,44 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n%2 == 0){
+            n = n/2;
+            if(n%2 == 0){
+                System.out.println(n/2-1);
+            }
+            else{
+                System.out.println(n/2);
+            }
+        }
+        else{
+            System.out.println("0");
+        }
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] a){
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+        int x = 0, y = 0, z = 0;
+        for(int i = 0; i < testCase; i++){
+            int x1 = sc.nextInt();
+            x += x1;
+            int y1 = sc.nextInt();
+            y += y1;
+            int z1 = sc.nextInt();
+            z += z1;
+        }
+        if(x == 0 && y == 0 && z == 0) System.out.println("YES");
+        else System.out.println("NO");
+    }
+}
