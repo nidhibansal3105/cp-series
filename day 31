@@ -1,0 +1,28 @@
+//Ques 1 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int a = sc.nextInt();
+        long ans = (long)((Math.max(n,m)+(a-1))/a) * (long)((Math.min(n,m)+(a-1))/a);
+        System.out.println(ans);
+    }
+}
+
+//Ques 2 : (link--> https://codeforces.com/problemset/status?my=on)
+
+import java.util.*;
+
+public class git{
+    public static void main(String[] arg){
+        Scanner sc = new Scanner(System.in);
+        double h = sc.nextInt();
+        double l = sc.nextInt();
+        double ans = (l*l - h*h)/(2*h);
+        System.out.println(ans);
+    }
+}
